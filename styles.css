@@ -2,6 +2,46 @@ body {
     font-family: 'Google Sans Text', sans-serif;
 }
 
+.bg-pastel-blue-100 {
+    background-color: #cce7ff;
+}
+
+.bg-pastel-blue-200 {
+    background-color: #b3d9ff;
+}
+
+.bg-pastel-blue-300 {
+    background-color: #99ccff;
+}
+
+.bg-pastel-blue-500 {
+    background-color: #4da6ff;
+}
+
+.bg-pastel-blue-600 {
+    background-color: #3399ff;
+}
+
+.text-pastel-blue-100 {
+    color: #cce7ff;
+}
+
+.text-pastel-blue-200 {
+    color: #b3d9ff;
+}
+
+.text-pastel-blue-300 {
+    color: #99ccff;
+}
+
+.text-pastel-blue-500 {
+    color: #4da6ff;
+}
+
+.text-pastel-blue-600 {
+    color: #3399ff;
+}
+
 .mobile-nav {
     display: none;
 }
@@ -116,7 +156,7 @@ body {
 }
 
 .pricing-box.highlighted {
-    border-color: #007BFF;
+    border-color: #3399ff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -129,7 +169,7 @@ body {
 }
 
 .glide__bullet--active {
-    background-color: #007BFF;
+    background-color: #3399ff;
 }
 
 .accordion {
@@ -170,29 +210,6 @@ body {
     display: block;
 }
 
-/* Background overlay for hero section */
-.hero-bg {
-    background-image: url('https://source.unsplash.com/1600x900/?conference,leadership');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.hero-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
 /* Facilitator card style */
 .facilitator-card {
     background-color: white;
@@ -226,7 +243,7 @@ body {
 
 .facilitator-card .facilitator-title {
     font-size: 18px;
-    color: #007BFF;
+    color: #3399ff;
     margin-bottom: 20px;
 }
 
@@ -254,5 +271,5 @@ body {
 }
 
 .feature-list li svg {
-    color: #007BFF;
+    color: #3399ff;
 }
