@@ -4,11 +4,8 @@ body {
     color: #1d1d1f; /* Dark gray text */
 }
 
-/* Hero Section Updates */
-.hero-section,
-.hero-section h1,
-.hero-section p {
-    color: #1d1d1f; /* Dark gray text for readability */
+.hero-section {
+    color: #1d1d1f; /* Ensure hero section text is readable */
 }
 
 .bg-apple-light-gray {
@@ -33,6 +30,14 @@ body {
 
 .text-apple-white {
     color: #ffffff; /* White text for dark backgrounds */
+}
+
+.bg-apple-blue {
+    background-color: #0071e3; /* Apple blue color for buttons */
+}
+
+.bg-apple-blue-dark {
+    background-color: #005bb5; /* Darker blue for hover states */
 }
 
 .mobile-nav {
@@ -161,11 +166,6 @@ button:hover,
 
 .glide__slide {
     text-align: center;
-}
-
-/* Remove Unnecessary Button Styles in Testimonials */
-.glide__slide button {
-    display: none;
 }
 
 .glide__bullet {
