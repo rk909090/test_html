@@ -145,6 +145,41 @@
         .glide__bullet--active {
             background-color: #007BFF;
         }
+
+        .accordion {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            padding: 18px;
+            background-color: #f1f1f1;
+            border: none;
+            outline: none;
+            text-align: left;
+            width: 100%;
+            font-size: 18px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .accordion:hover,
+        .accordion.active {
+            background-color: #ddd;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+            border-left: 2px solid #ddd;
+            border-right: 2px solid #ddd;
+            border-bottom: 2px solid #ddd;
+            border-radius: 0 0 5px 5px;
+            margin-bottom: 10px;
+        }
+
+        .panel.show {
+            display: block;
+        }
     </style>
 </head>
 
@@ -275,12 +310,29 @@
                                 <h3 class="text-lg font-semibold text-gray-800">Emily R., HR Specialist</h3>
                             </div>
                         </li>
+                        <!-- Additional Testimonials -->
+                        <!-- Testimonial 4 -->
+                        <li class="glide__slide">
+                            <div class="bg-white p-8 rounded-lg shadow-lg">
+                                <p class="text-lg text-gray-600 mb-4">"The instructors were amazing, and the content was extremely relevant to my role. Highly recommended!" 🌟</p>
+                                <h3 class="text-lg font-semibold text-gray-800">Michael B., Product Manager</h3>
+                            </div>
+                        </li>
+                        <!-- Testimonial 5 -->
+                        <li class="glide__slide">
+                            <div class="bg-white p-8 rounded-lg shadow-lg">
+                                <p class="text-lg text-gray-600 mb-4">"The hands-on experience and real-world case studies made this workshop invaluable." 💼</p>
+                                <h3 class="text-lg font-semibold text-gray-800">Jessica M., Project Lead</h3>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="glide__bullets" data-glide-el="controls[nav]">
                     <button class="glide__bullet" data-glide-dir="=0"></button>
                     <button class="glide__bullet" data-glide-dir="=1"></button>
                     <button class="glide__bullet" data-glide-dir="=2"></button>
+                    <button class="glide__bullet" data-glide-dir="=3"></button>
+                    <button class="glide__bullet" data-glide-dir="=4"></button>
                 </div>
             </div>
         </div>
@@ -303,6 +355,13 @@
                         <p class="text-xl font-semibold text-gray-900">💸 Normal: $599</p>
                         <p class="text-lg text-gray-600">From October 1st</p>
                     </div>
+                    <ul class="list-disc list-inside text-gray-600 text-left mb-6">
+                        <li>📚 Comprehensive Workshop Materials</li>
+                        <li>🍴 Lunch & Refreshments</li>
+                        <li>📜 Certificate of Completion</li>
+                        <li>🎤 Access to All Sessions & Recordings</li>
+                        <li>📊 Workshop Toolkit & Resources</li>
+                    </ul>
                     <button onclick="openForm('Individual')" class="px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition">Join Now</button>
                 </div>
                 <!-- Corporate Pricing -->
@@ -317,8 +376,42 @@
                         <p class="text-xl font-semibold text-gray-900">💸 Normal: $1,799</p>
                         <p class="text-lg text-gray-600">From October 1st</p>
                     </div>
+                    <ul class="list-disc list-inside text-gray-600 text-left mb-6">
+                        <li>📚 Comprehensive Workshop Materials</li>
+                        <li>🍴 Lunch & Refreshments</li>
+                        <li>📜 Certificate of Completion</li>
+                        <li>🎤 Access to All Sessions & Recordings</li>
+                        <li>💼 Corporate Group Discount</li>
+                        <li>📊 Post-Workshop Consultancy</li>
+                    </ul>
                     <button onclick="openForm('Corporate')" class="px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition">Join Now</button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto text-center container">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions (FAQ)</h2>
+            <button class="accordion">What is the workshop schedule?</button>
+            <div class="panel">
+                <p>The workshop runs from 9 AM to 5 PM each day, with breaks for lunch and refreshments.</p>
+            </div>
+
+            <button class="accordion">What materials are provided?</button>
+            <div class="panel">
+                <p>Participants receive comprehensive workshop materials, access to all sessions & recordings, and a toolkit with resources.</p>
+            </div>
+
+            <button class="accordion">Can I get a refund if I cannot attend?</button>
+            <div class="panel">
+                <p>Yes, refunds are available up to 30 days before the workshop starts. Please contact us for more details.</p>
+            </div>
+
+            <button class="accordion">Is there a group discount for corporate teams?</button>
+            <div class="panel">
+                <p>Yes, we offer a corporate group discount for teams attending the workshop. Contact us for more information.</p>
             </div>
         </div>
     </section>
@@ -354,6 +447,7 @@
         const mobileNav = document.querySelector('.mobile-nav');
         const registrationForm = document.getElementById('registrationForm');
         const registrationType = document.getElementById('registrationType');
+        const acc = document.getElementsByClassName("accordion");
 
         burger.addEventListener('click', () => {
             mobileNav.classList.toggle('open');
@@ -370,7 +464,7 @@
 
         new Glide('.glide', {
             type: 'carousel',
-            perView: 1,
+            perView: 3,
             focusAt: 'center',
             gap: 30,
             autoplay: 4000,
@@ -378,6 +472,14 @@
             animationDuration: 800,
             animationTimingFunc: 'ease-in-out',
         }).mount();
+
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                panel.classList.toggle("show");
+            });
+        }
     </script>
 </body>
 
