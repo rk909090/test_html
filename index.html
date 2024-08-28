@@ -158,6 +158,9 @@
             font-size: 18px;
             margin-top: 10px;
             border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .accordion:hover,
@@ -166,7 +169,7 @@
         }
 
         .panel {
-            padding: 0 18px;
+            padding: 20px 18px;
             background-color: white;
             display: none;
             overflow: hidden;
@@ -180,6 +183,94 @@
         .panel.show {
             display: block;
         }
+
+        /* Background overlay for hero section */
+        .hero-bg {
+            background-image: url('https://source.unsplash.com/1600x900/?conference,leadership');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Facilitator card style */
+        .facilitator-card {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .facilitator-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .facilitator-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .facilitator-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .facilitator-card p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .facilitator-card .facilitator-title {
+            font-size: 18px;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        /* Feature list style */
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            color: #555;
+            padding: 8px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            background-color: #eee;
+        }
+
+        .feature-list li svg {
+            color: #007BFF;
+        }
+
     </style>
 </head>
 
@@ -215,8 +306,8 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-blue-600 text-white py-20">
-        <div class="max-w-7xl mx-auto text-center container">
+    <section class="hero-bg text-white py-20">
+        <div class="max-w-7xl mx-auto text-center container hero-content">
             <h1 class="text-5xl font-bold mb-4">How To Be A World-Class Manager Workshop</h1>
             <p class="text-xl mb-8">Join our 3-day workshop to master the skills and strategies to become a top-tier manager in your industry.</p>
             <p class="text-lg mb-8">📅 <strong>Dates:</strong> October 15-17, 2024 | 📍 <strong>Location:</strong> Grand Hotel, New York City</p>
@@ -232,13 +323,28 @@
         </div>
     </section>
 
+    <!-- Facilitator Section -->
+    <section id="facilitator" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto text-center container">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Meet Your Facilitator</h2>
+            <div class="facilitator-card mx-auto max-w-sm">
+                <img src="https://source.unsplash.com/featured/?business,man" alt="Facilitator Image">
+                <div class="p-6">
+                    <h3 class="text-gray-900">John Doe</h3>
+                    <p class="facilitator-title">Chief Leadership Officer at ABC Consulting</p>
+                    <p class="text-gray-700">John Doe is a seasoned management consultant with over 20 years of experience in leadership and organizational development. He has worked with top-tier companies across various industries to enhance their leadership strategies and drive sustainable growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Outline Section -->
-    <section id="outline" class="py-20 bg-gray-100">
+    <section id="outline" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto text-center container">
             <h2 class="text-3xl font-bold text-gray-900 mb-12">Workshop Outline</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
                 <!-- Day 1 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
+                <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">Day 1: Leadership Fundamentals</h3>
                     <ul class="list-disc list-inside text-gray-600">
                         <li>Understanding Leadership Styles</li>
@@ -248,7 +354,7 @@
                     </ul>
                 </div>
                 <!-- Day 2 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
+                <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">Day 2: Strategic Management</h3>
                     <ul class="list-disc list-inside text-gray-600">
                         <li>Developing Strategic Thinking</li>
@@ -258,7 +364,7 @@
                     </ul>
                 </div>
                 <!-- Day 3 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
+                <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">Day 3: Team Dynamics & Performance</h3>
                     <ul class="list-disc list-inside text-gray-600">
                         <li>Building High-Performance Teams</li>
@@ -355,12 +461,37 @@
                         <p class="text-xl font-semibold text-gray-900">💸 Normal: $599</p>
                         <p class="text-lg text-gray-600">From October 1st</p>
                     </div>
-                    <ul class="list-disc list-inside text-gray-600 text-left mb-6">
-                        <li>📚 Comprehensive Workshop Materials</li>
-                        <li>🍴 Lunch & Refreshments</li>
-                        <li>📜 Certificate of Completion</li>
-                        <li>🎤 Access to All Sessions & Recordings</li>
-                        <li>📊 Workshop Toolkit & Resources</li>
+                    <ul class="feature-list text-left mb-6">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Comprehensive Workshop Materials
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Lunch & Refreshments
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Certificate of Completion
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Access to All Sessions & Recordings
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Workshop Toolkit & Resources
+                        </li>
                     </ul>
                     <button onclick="openForm('Individual')" class="px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition">Join Now</button>
                 </div>
@@ -376,13 +507,43 @@
                         <p class="text-xl font-semibold text-gray-900">💸 Normal: $1,799</p>
                         <p class="text-lg text-gray-600">From October 1st</p>
                     </div>
-                    <ul class="list-disc list-inside text-gray-600 text-left mb-6">
-                        <li>📚 Comprehensive Workshop Materials</li>
-                        <li>🍴 Lunch & Refreshments</li>
-                        <li>📜 Certificate of Completion</li>
-                        <li>🎤 Access to All Sessions & Recordings</li>
-                        <li>💼 Corporate Group Discount</li>
-                        <li>📊 Post-Workshop Consultancy</li>
+                    <ul class="feature-list text-left mb-6">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Comprehensive Workshop Materials
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Lunch & Refreshments
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Certificate of Completion
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Access to All Sessions & Recordings
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Corporate Group Discount
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Post-Workshop Consultancy
+                        </li>
                     </ul>
                     <button onclick="openForm('Corporate')" class="px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition">Join Now</button>
                 </div>
@@ -394,22 +555,38 @@
     <section id="faq" class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto text-center container">
             <h2 class="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions (FAQ)</h2>
-            <button class="accordion">What is the workshop schedule?</button>
+            <button class="accordion">What is the workshop schedule?
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                </svg>
+            </button>
             <div class="panel">
                 <p>The workshop runs from 9 AM to 5 PM each day, with breaks for lunch and refreshments.</p>
             </div>
 
-            <button class="accordion">What materials are provided?</button>
+            <button class="accordion">What materials are provided?
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                </svg>
+            </button>
             <div class="panel">
                 <p>Participants receive comprehensive workshop materials, access to all sessions & recordings, and a toolkit with resources.</p>
             </div>
 
-            <button class="accordion">Can I get a refund if I cannot attend?</button>
+            <button class="accordion">Can I get a refund if I cannot attend?
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                </svg>
+            </button>
             <div class="panel">
                 <p>Yes, refunds are available up to 30 days before the workshop starts. Please contact us for more details.</p>
             </div>
 
-            <button class="accordion">Is there a group discount for corporate teams?</button>
+            <button class="accordion">Is there a group discount for corporate teams?
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                </svg>
+            </button>
             <div class="panel">
                 <p>Yes, we offer a corporate group discount for teams attending the workshop. Contact us for more information.</p>
             </div>
@@ -478,6 +655,8 @@
                 this.classList.toggle("active");
                 const panel = this.nextElementSibling;
                 panel.classList.toggle("show");
+                const icon = this.querySelector('svg');
+                icon.classList.toggle('rotate-180');
             });
         }
     </script>
