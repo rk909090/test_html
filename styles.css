@@ -4,6 +4,13 @@ body {
     color: #1d1d1f; /* Dark gray text */
 }
 
+/* Hero Section Updates */
+.hero-section,
+.hero-section h1,
+.hero-section p {
+    color: #1d1d1f; /* Dark gray text for readability */
+}
+
 .bg-apple-light-gray {
     background-color: #f5f5f7; /* Light gray background for sections */
 }
@@ -26,11 +33,6 @@ body {
 
 .text-apple-white {
     color: #ffffff; /* White text for dark backgrounds */
-}
-
-/* Hero Section Updates */
-.hero-section {
-    color: #1d1d1f; /* Dark gray text for readability */
 }
 
 .mobile-nav {
@@ -113,24 +115,23 @@ body {
 }
 
 /* Button Updates */
-.form-container .btn,
-button {
+button,
+.form-container .btn {
     background-color: #0071e3; /* Apple blue button color */
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 600;
     display: inline-block;
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
-.form-container .btn:hover,
-button:hover {
+button:hover,
+.form-container .btn:hover {
     background-color: #005bb5;
 }
 
@@ -160,6 +161,11 @@ button:hover {
 
 .glide__slide {
     text-align: center;
+}
+
+/* Remove Unnecessary Button Styles in Testimonials */
+.glide__slide button {
+    display: none;
 }
 
 .glide__bullet {
