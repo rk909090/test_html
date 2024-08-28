@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Consulting Services</title>
+    <title>How To Be A World-Class Manager Workshop</title>
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Google Sans Font -->
@@ -43,7 +43,6 @@
                 cursor: pointer;
             }
 
-            /* Add padding for mobile */
             .px-4 {
                 padding-left: 1rem;
                 padding-right: 1rem;
@@ -59,6 +58,64 @@
                 padding-right: 1rem;
             }
         }
+
+        .form-popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .form-container input[type=text],
+        .form-container input[type=email] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: none;
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: none;
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .form-container .btn:hover {
+            background-color: #45a049;
+        }
+
+        .form-container .cancel {
+            background-color: red;
+        }
+
+        .form-container .cancel:hover {
+            background-color: darkred;
+        }
     </style>
 </head>
 
@@ -71,9 +128,11 @@
             </div>
             <nav class="desktop-nav space-x-4 hidden md:flex">
                 <a href="#" class="text-gray-600 hover:text-blue-500">Home</a>
-                <a href="#services" class="text-gray-600 hover:text-blue-500">Services</a>
-                <a href="#about" class="text-gray-600 hover:text-blue-500">About Us</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-500">Contact</a>
+                <a href="#overview" class="text-gray-600 hover:text-blue-500">Overview</a>
+                <a href="#outline" class="text-gray-600 hover:text-blue-500">Outline</a>
+                <a href="#why-join" class="text-gray-600 hover:text-blue-500">Why Join?</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-500">Testimonials</a>
+                <a href="#pricing" class="text-gray-600 hover:text-blue-500">Pricing</a>
             </nav>
             <div class="burger md:hidden flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -83,75 +142,154 @@
         </div>
         <nav class="mobile-nav md:hidden absolute top-full left-0 w-full bg-white shadow-lg">
             <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Home</a>
-            <a href="#services" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Services</a>
-            <a href="#about" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">About Us</a>
-            <a href="#contact" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contact</a>
+            <a href="#overview" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Overview</a>
+            <a href="#outline" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Outline</a>
+            <a href="#why-join" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Why Join?</a>
+            <a href="#testimonials" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Testimonials</a>
+            <a href="#pricing" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Pricing</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="bg-blue-600 text-white py-20">
         <div class="max-w-7xl mx-auto text-center container">
-            <h1 class="text-5xl font-bold mb-4">Unlock Your Business Potential</h1>
-            <p class="text-xl mb-8">Expert Consulting Services to Drive Growth and Success</p>
-            <a href="#contact" class="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-semibold hover:bg-gray-200">Get a Free Consultation</a>
+            <h1 class="text-5xl font-bold mb-4">How To Be A World-Class Manager Workshop</h1>
+            <p class="text-xl mb-8">Join our 3-day workshop to master the skills and strategies to become a top-tier manager in your industry.</p>
+            <p class="text-lg mb-8">📅 <strong>Dates:</strong> October 15-17, 2024 | 📍 <strong>Location:</strong> Grand Hotel, New York City</p>
+            <a href="#pricing" class="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-semibold hover:bg-gray-200">Register Now</a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-100">
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto text-center container">
-            <h2 class="text-3xl font-bold text-gray-900 mb-12">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Strategy Consulting</h3>
-                    <p class="text-gray-600">Develop long-term strategies that help you achieve your business goals.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Operational Excellence</h3>
-                    <p class="text-gray-600">Optimize processes to improve efficiency and reduce costs.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Financial Advisory</h3>
-                    <p class="text-gray-600">Get expert advice on managing your finances for sustainable growth.</p>
-                </div>
-            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Workshop Overview</h2>
+            <p class="text-lg text-gray-600 mb-12">This comprehensive 3-day workshop is designed for aspiring and current managers who want to elevate their leadership and management skills. Our expert instructors will guide you through practical strategies and proven methodologies to manage teams effectively, foster innovation, and drive business success.</p>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center container">
-            <div>
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">About ConsultPro</h2>
-                <p class="text-gray-600 mb-4">At ConsultPro, we are dedicated to helping businesses navigate their biggest challenges. Our team of experienced consultants brings a wealth of knowledge and a proven track record of success.</p>
-                <p class="text-gray-600">Whether you're looking to develop a new strategy, optimize your operations, or seek financial advice, we have the expertise to guide you every step of the way.</p>
-            </div>
-            <div>
-                <img src="https://via.placeholder.com/500x300" alt="About Us Image" class="rounded-lg shadow-lg">
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-100">
+    <!-- Outline Section -->
+    <section id="outline" class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto text-center container">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8">Contact Us</h2>
-            <p class="text-lg text-gray-600 mb-12">Ready to take your business to the next level? Get in touch with us today for a free consultation.</p>
-            <form action="#" method="POST" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
-                <div class="mb-6">
-                    <input type="text" name="name" placeholder="Your Name" class="w-full p-4 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12">Workshop Outline</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+                <!-- Day 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Day 1: Leadership Fundamentals</h3>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>Understanding Leadership Styles</li>
+                        <li>Building Emotional Intelligence</li>
+                        <li>Effective Communication Techniques</li>
+                        <li>Setting Clear Goals and Expectations</li>
+                    </ul>
                 </div>
-                <div class="mb-6">
-                    <input type="email" name="email" placeholder="Your Email" class="w-full p-4 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <!-- Day 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Day 2: Strategic Management</h3>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>Developing Strategic Thinking</li>
+                        <li>Managing Change and Innovation</li>
+                        <li>Resource Allocation and Optimization</li>
+                        <li>Decision-Making in Complex Environments</li>
+                    </ul>
                 </div>
-                <div class="mb-6">
-                    <textarea name="message" placeholder="Your Message" class="w-full p-4 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" rows="5"></textarea>
+                <!-- Day 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Day 3: Team Dynamics & Performance</h3>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>Building High-Performance Teams</li>
+                        <li>Conflict Resolution Strategies</li>
+                        <li>Performance Management</li>
+                        <li>Maintaining Work-Life Balance</li>
+                    </ul>
                 </div>
-                <button type="submit" class="w-full px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition">Send Message</button>
-            </form>
+            </div>
         </div>
     </section>
+
+    <!-- Why Join Section -->
+    <section id="why-join" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto text-center container">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Why You Must Join This Workshop</h2>
+            <p class="text-lg text-gray-600 mb-12">🌟 This workshop is designed to transform you into a world-class manager by equipping you with the tools and techniques used by top leaders globally. Whether you're looking to advance your career, manage teams more effectively, or drive business growth, this workshop will provide you with actionable insights and practical skills.</p>
+            <p class="text-lg text-gray-600">🌟 Networking Opportunity: Connect with like-minded professionals and expand your professional network.</p>
+            <p class="text-lg text-gray-600">🌟 Hands-On Experience: Engage in interactive sessions and real-world case studies.</p>
+            <p class="text-lg text-gray-600">🌟 Expert Instructors: Learn from industry leaders with decades of experience in management and leadership.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto text-center container">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">What Past Attendees Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <p class="text-lg text-gray-600 mb-4">"This workshop completely changed how I manage my team. The skills I learned have made me a more confident and effective leader." 🙌</p>
+                    <h3 class="text-lg font-semibold text-gray-800">Sarah L., Marketing Manager</h3>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <p class="text-lg text-gray-600 mb-4">"The strategic insights from this workshop helped me lead my department through a major transformation with great success." 🚀</p>
+                    <h3 class="text-lg font-semibold text-gray-800">John D., Operations Director</h3>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <p class="text-lg text-gray-600 mb-4">"An excellent investment in my career. The networking opportunities alone were worth it." 🤝</p>
+                    <h3 class="text-lg font-semibold text-gray-800">Emily R., HR Specialist</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto text-center container">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Workshop Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Individual Pricing -->
+                <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Individual</h3>
+                    <p class="text-lg text-gray-600 mb-4">Perfect for solo professionals looking to enhance their management skills.</p>
+                    <div class="mb-6">
+                        <p class="text-xl font-semibold text-gray-900">💸 Early Bird: $499</p>
+                        <p class="text-lg text-gray-600">Before September 30th</p>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-xl font-semibold text-gray-900">💸 Normal: $599</p>
+                        <p class="text-lg text-gray-600">From October 1st</p>
+                    </div>
+                    <button onclick="openForm('Individual')" class="px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition">Join Now</button>
+                </div>
+                <!-- Corporate Pricing -->
+                <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Corporate</h3>
+                    <p class="text-lg text-gray-600 mb-4">Ideal for companies who want to train multiple managers and leaders.</p>
+                    <div class="mb-6">
+                        <p class="text-xl font-semibold text-gray-900">💸 Early Bird: $1,499</p>
+                        <p class="text-lg text-gray-600">Before September 30th</p>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-xl font-semibold text-gray-900">💸 Normal: $1,799</p>
+                        <p class="text-lg text-gray-600">From October 1st</p>
+                    </div>
+                    <button onclick="openForm('Corporate')" class="px-8 py-4 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition">Join Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form (Popup) -->
+    <div class="form-popup" id="registrationForm">
+        <form action="#" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Register for <span id="registrationType"></span></h2>
+            <input type="text" placeholder="Your Name" name="name" required>
+            <input type="email" placeholder="Your Email" name="email" required>
+            <textarea placeholder="Your Message" name="message" rows="4"></textarea>
+            <button type="submit" class="btn">Submit</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
 
     <!-- Footer Section -->
     <footer class="bg-gray-900 text-white py-6">
@@ -165,14 +303,25 @@
         </div>
     </footer>
 
+    <!-- JavaScript to handle the burger menu and registration form -->
     <script>
-        // JavaScript to handle the burger menu
         const burger = document.querySelector('.burger');
         const mobileNav = document.querySelector('.mobile-nav');
+        const registrationForm = document.getElementById('registrationForm');
+        const registrationType = document.getElementById('registrationType');
 
         burger.addEventListener('click', () => {
             mobileNav.classList.toggle('open');
         });
+
+        function openForm(type) {
+            registrationType.textContent = type;
+            registrationForm.style.display = 'block';
+        }
+
+        function closeForm() {
+            registrationForm.style.display = 'none';
+        }
     </script>
 </body>
 
