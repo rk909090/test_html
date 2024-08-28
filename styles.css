@@ -2,44 +2,48 @@ body {
     font-family: 'Google Sans Text', sans-serif;
 }
 
+.bg-pastel-blue-50 {
+    background-color: #f0f8ff; /* Lightest blue for background */
+}
+
 .bg-pastel-blue-100 {
-    background-color: #cce7ff;
+    background-color: #e6f2ff; /* Very light blue for sections */
 }
 
 .bg-pastel-blue-200 {
-    background-color: #b3d9ff;
+    background-color: #cce6ff; /* Light blue for highlighted areas */
 }
 
 .bg-pastel-blue-300 {
-    background-color: #99ccff;
+    background-color: #b3d9ff; /* Slightly darker light blue */
+}
+
+.bg-pastel-blue-400 {
+    background-color: #99ccff; /* Muted blue for buttons */
 }
 
 .bg-pastel-blue-500 {
-    background-color: #4da6ff;
-}
-
-.bg-pastel-blue-600 {
-    background-color: #3399ff;
-}
-
-.text-pastel-blue-100 {
-    color: #cce7ff;
-}
-
-.text-pastel-blue-200 {
-    color: #b3d9ff;
-}
-
-.text-pastel-blue-300 {
-    color: #99ccff;
-}
-
-.text-pastel-blue-500 {
-    color: #4da6ff;
+    background-color: #80bfff; /* Default blue for headers */
 }
 
 .text-pastel-blue-600 {
-    color: #3399ff;
+    color: #3399ff; /* Medium blue for text highlights */
+}
+
+.text-pastel-blue-500 {
+    color: #4da6ff; /* Default text color for links and buttons */
+}
+
+.text-pastel-blue-400 {
+    color: #66b3ff; /* Lighter text color for subtle highlights */
+}
+
+.text-pastel-blue-300 {
+    color: #99ccff; /* Text color for muted areas */
+}
+
+.text-pastel-blue-200 {
+    color: #b3d9ff; /* Very light blue for background text */
 }
 
 .mobile-nav {
@@ -122,7 +126,7 @@ body {
 }
 
 .form-container .btn {
-    background-color: #4CAF50;
+    background-color: #3399ff;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -133,15 +137,15 @@ body {
 }
 
 .form-container .btn:hover {
-    background-color: #45a049;
+    background-color: #4da6ff;
 }
 
 .form-container .cancel {
-    background-color: red;
+    background-color: #ff6666;
 }
 
 .form-container .cancel:hover {
-    background-color: darkred;
+    background-color: #ff4d4d;
 }
 
 .pricing-box {
@@ -150,13 +154,13 @@ body {
 }
 
 .pricing-box:hover {
-    border-color: #4CAF50;
+    border-color: #3399ff;
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .pricing-box.highlighted {
-    border-color: #3399ff;
+    border-color: #4da6ff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -191,17 +195,17 @@ body {
 
 .accordion:hover,
 .accordion.active {
-    background-color: #ddd;
+    background-color: #e6f2ff;
 }
 
 .panel {
     padding: 20px 18px;
-    background-color: white;
+    background-color: #ffffff;
     display: none;
     overflow: hidden;
-    border-left: 2px solid #ddd;
-    border-right: 2px solid #ddd;
-    border-bottom: 2px solid #ddd;
+    border-left: 2px solid #e6e6e6;
+    border-right: 2px solid #e6e6e6;
+    border-bottom: 2px solid #e6e6e6;
     border-radius: 0 0 5px 5px;
     margin-bottom: 10px;
 }
