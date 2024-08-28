@@ -26,6 +26,11 @@ new Glide('.glide', {
     hoverpause: true,
     animationDuration: 800,
     animationTimingFunc: 'ease-in-out',
+    breakpoints: {
+        768: {
+            perView: 1,
+        },
+    },
 }).mount();
 
 for (let i = 0; i < acc.length; i++) {
