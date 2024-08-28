@@ -335,16 +335,42 @@
     </section>
 
     <!-- Registration Form (Popup) -->
-    <div class="form-popup" id="registrationForm">
-        <form action="#" class="form-container">
-            <h2 class="text-2xl font-bold text-apple-dark-gray mb-6">Register for <span id="registrationType"></span></h2>
-            <input type="text" placeholder="Your Name" name="name" required>
-            <input type="email" placeholder="Your Email" name="email" required>
-            <textarea placeholder="Your Message" name="message" rows="4"></textarea>
-            <button type="submit" class="btn">Submit</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-    </div>
+<div class="form-popup" id="registrationForm">
+    <form id="registrationForm" class="form-container">
+        <h2 class="text-2xl font-bold text-apple-dark-gray mb-6">Register for <span id="registrationType"></span></h2>
+        
+        <!-- Name Field -->
+        <label for="name" class="text-apple-dark-gray">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        
+        <!-- Email Field -->
+        <label for="email" class="text-apple-dark-gray">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <!-- Phone Number Field -->
+        <label for="phone" class="text-apple-dark-gray">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        
+        <!-- Company Name Field -->
+        <label for="company" class="text-apple-dark-gray">Company Name:</label>
+        <input type="text" id="company" name="company" placeholder="Enter your company name" required>
+        
+        <!-- Job Title Field -->
+        <label for="title" class="text-apple-dark-gray">Job Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter your job title" required>
+        
+        <!-- Workshop Type Field -->
+        <label for="workshopType" class="text-apple-dark-gray">Workshop Type:</label>
+        <select id="workshopType" name="workshopType" required>
+            <option value="Individual">Individual</option>
+            <option value="Corporate">Corporate</option>
+        </select>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="btn">Register Now</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+</div>
 
     <!-- Footer Section -->
     <footer class="bg-apple-dark-gray text-white py-6">
