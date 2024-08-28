@@ -335,42 +335,56 @@
     </section>
 
     <!-- Registration Form (Popup) -->
-<div class="form-popup" id="registrationForm">
-    <form id="registrationForm" class="form-container">
-        <h2 class="text-2xl font-bold text-apple-dark-gray mb-6">Register for <span id="registrationType"></span></h2>
-        
-        <!-- Name Field -->
-        <label for="name" class="text-apple-dark-gray">Full Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-        
-        <!-- Email Field -->
-        <label for="email" class="text-apple-dark-gray">Email Address:</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        
-        <!-- Phone Number Field -->
-        <label for="phone" class="text-apple-dark-gray">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-        
-        <!-- Company Name Field -->
-        <label for="company" class="text-apple-dark-gray">Company Name:</label>
-        <input type="text" id="company" name="company" placeholder="Enter your company name" required>
-        
-        <!-- Job Title Field -->
-        <label for="title" class="text-apple-dark-gray">Job Title:</label>
-        <input type="text" id="title" name="title" placeholder="Enter your job title" required>
-        
-        <!-- Workshop Type Field -->
-        <label for="workshopType" class="text-apple-dark-gray">Workshop Type:</label>
-        <select id="workshopType" name="workshopType" required>
-            <option value="Individual">Individual</option>
-            <option value="Corporate">Corporate</option>
-        </select>
-        
-        <!-- Submit Button -->
-        <button type="submit" class="btn">Register Now</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-    </form>
-</div>
+    <div class="form-popup" id="registrationForm">
+        <form id="registrationForm" class="form-container bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto">
+            <h2 class="text-2xl font-bold text-apple-dark-gray mb-6 text-center">Register for <span id="registrationType" class="text-apple-blue"></span></h2>
+            
+            <!-- Name Field -->
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-apple-dark-gray">Full Name</label>
+                <input type="text" id="name" name="name" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-apple-blue focus:border-apple-blue" placeholder="Enter your full name" required>
+            </div>
+            
+            <!-- Email Field -->
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-apple-dark-gray">Email Address</label>
+                <input type="email" id="email" name="email" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-apple-blue focus:border-apple-blue" placeholder="Enter your email" required>
+            </div>
+            
+            <!-- Phone Number Field -->
+            <div class="mb-4">
+                <label for="phone" class="block text-sm font-medium text-apple-dark-gray">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-apple-blue focus:border-apple-blue" placeholder="Enter your phone number" required>
+            </div>
+            
+            <!-- Company Name Field -->
+            <div class="mb-4">
+                <label for="company" class="block text-sm font-medium text-apple-dark-gray">Company Name</label>
+                <input type="text" id="company" name="company" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-apple-blue focus:border-apple-blue" placeholder="Enter your company name" required>
+            </div>
+            
+            <!-- Job Title Field -->
+            <div class="mb-4">
+                <label for="title" class="block text-sm font-medium text-apple-dark-gray">Job Title</label>
+                <input type="text" id="title" name="title" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-apple-blue focus:border-apple-blue" placeholder="Enter your job title" required>
+            </div>
+            
+            <!-- Workshop Type Field -->
+            <div class="mb-6">
+                <label for="workshopType" class="block text-sm font-medium text-apple-dark-gray">Workshop Type</label>
+                <select id="workshopType" name="workshopType" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-apple-blue focus:border-apple-blue" required>
+                    <option value="Individual">Individual</option>
+                    <option value="Corporate">Corporate</option>
+                </select>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="flex justify-between">
+                <button type="submit" class="w-full bg-apple-blue text-white py-3 px-6 rounded-md shadow-sm font-medium hover:bg-apple-blue-dark transition">Register Now</button>
+                <button type="button" class="ml-4 w-full bg-red-600 text-white py-3 px-6 rounded-md shadow-sm font-medium hover:bg-red-700 transition" onclick="closeForm()">Close</button>
+            </div>
+        </form>
+    </div>
 
     <!-- Footer Section -->
     <footer class="bg-apple-dark-gray text-white py-6">
